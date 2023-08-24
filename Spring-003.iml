@@ -5,6 +5,7 @@
       <configuration>
         <fileset id="fileset" name="LSDi" removed="false">
           <file>file://$MODULE_DIR$/Spring-003/src/main/resources/LSDi.xml</file>
+          <file>file://$MODULE_DIR$/Spring-003/src/main/resources/Spring-p.xml</file>
         </fileset>
       </configuration>
     </facet>
