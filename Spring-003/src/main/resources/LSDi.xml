@@ -19,5 +19,20 @@
             <value>长沙</value>
         </set>
     </property>
+    <property name="phones">
+        <map>
+            <entry key="1" value="110"/>
+            <entry key="2" value="120"/>
+            <entry key="3" value="130"/>
+        </map>
+    </property>
+    <property name="sqlDriver">
+        <props>
+            <prop key="driver">com.mysql.cj.jdbc.driver</prop>
+            <prop key="url">jdbc:mysql://localhost:3306/Spring</prop>
+            <prop key="username">root</prop>
+            <prop key="password">123456</prop>
+        </props>
+    </property>
 </bean>
 </beans>
