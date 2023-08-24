@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="vipBean" class="com.Husky.spring6.Bean.Vip"/>
+    <bean name="customerBean" class="com.Husky.spring6.Bean.Customer"/>
+    <bean name="userDaoBean" class="com.Husky.spring6.Dao.customerDao"/>
+    <bean name="vipDaoBean" class="com.Husky.spring6.Dao.vipDao"/>
+    <bean name="userServiceBean" class="com.Husky.spring6.Service.userService">
+        <property name="customerDao" ref="userDaoBean"/>
+        <constructor-arg index="0" ref="vipDaoBean"></constructor-arg>
+    </bean>
+</beans>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <bean name="woman" class="com.Husky.spring6.Bean.woman">
+     <property name="name" value="邓丽君"/>
+     <property name="age" value="20"/>
+ </bean>
+    <bean name="svt" class="com.Husky.spring6.Bean.simpleValueType">
+        <property name="c" value="琪"/>
+        <property name="c2" value="Q"/>
+        <property name="b" value="123"/>
+        <property name="b2" value="127"/>
+        <property name="i" value="655365"/>
+        <property name="i2" value="-4846"/>
+        <property name="str" value="Husky"/>
+        <property name="season" value="AUTUMN"/>
+        <property name="date" value="Thu Aug 24 03:54:21 CST 2023"/>
+        <property name="clazz" value="java.lang.String"/>
+    </bean>
+    <bean name="s1" class="com.Husky.spring6.Bean.Student">
+        <property name="name" value="Husky"/>
+        <property name="age" value="22"/>
+        <property name="gender" value="男"/>
+    </bean>
+    <bean name="s2" class="com.Husky.spring6.Bean.Student">
+        <property name="name" value="xr"/>
+        <property name="age" value="21"/>
+        <property name="gender" value="女"/>
+    </bean>
+    <bean name="clazz" class="com.Husky.spring6.Bean.clazz">
+        <property name="name" value="网络1902"/>
+        <property name="students">
+            <array>
+                <ref bean="s1"/>
+                <ref bean="s2"/>
+            </array>
+        </property>
+    </bean>
+</beans>

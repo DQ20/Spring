@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="INFO" monitorInterval="30">
+    <properties>
+
+        <!--配置日志打印在tcs-consumer-log文件夹里，LOG_HOME获取文件夹的当前路径-->
+        <property name="LOG_HOME">${sys:user.dir}</property>
+        <property name="FILE_FOLDER">tcs-consumer-log</property>
+    </properties>
+
+    <appenders>
+        <!-- 输出控制台的配置 -->
+        <console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss.SSS}] [%t] %-5level %logger{36} - %m%n"/>
+        </console>
+
+        <!-- 将日志输出到指定文件 fileName属性值为日志文件地址,具体的用RollingFile 还是File想要了解区别的，百度一下吧，这里不做介绍-->
+        <RollingFile name="RollingFileError" fileName="${LOG_HOME}/${FILE_FOLDER}/error.log" filePattern="${LOG_HOME}/${FILE_FOLDER}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%p] - %l - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="StatsSchedule" fileName="${LOG_HOME}/${FILE_FOLDER}/statsSchedule.log" filePattern="${LOG_HOME}/${FILE_FOLDER}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+
+            <!--需要打印出INFO的日志，这里必须设置级别高的-->
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%p] - %l - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+        </RollingFile >
+    </appenders>
+
+
+    <!--标志颜色相同的单词一定要写的一致，不然匹配不上-->
+    <loggers>
+
+        <!--这个类就是你想打印信息的类  Root里面都代表日志的根日志，所有其他的日志都集成来自Root-->
+        <logger name="com....common.schedule.StatsSchedule" level="INFO" additivity="true">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="StatsSchedule" />
+        </logger>
+        <root level="info">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFileError"/>
+        </root>
+    </loggers>
+</configuration>
