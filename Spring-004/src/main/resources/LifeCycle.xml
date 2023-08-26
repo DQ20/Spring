@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.Husky.spring.processor.LogBeanPostProcessor"/>
     <bean name="dog" class="com.Husky.spring.bean.Dog" init-method="initDog" destroy-method="destroyDog">
         <property name="name" value="囧太郎"/>
     </bean>

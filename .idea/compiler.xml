@@ -10,6 +10,7 @@
         <module name="Spring-003" />
         <module name="Spring-001" />
         <module name="Spring-004" />
+        <module name="Spring-005" />
       </profile>
     </annotationProcessing>
   </component>
