@@ -9,6 +9,8 @@
         <module name="Spring-002" />
         <module name="Spring-003" />
         <module name="Spring-001" />
+        <module name="Spring-006" />
+        <module name="Spring-007" />
         <module name="Spring-004" />
         <module name="Spring-005" />
       </profile>
