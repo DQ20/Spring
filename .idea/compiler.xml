@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Aop-annotation" />
         <module name="Dynamic-proxy-jdk" />
         <module name="Spring-002" />
         <module name="Spring-003" />

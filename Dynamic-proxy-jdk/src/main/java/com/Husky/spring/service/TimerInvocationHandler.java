@@ -12,9 +12,9 @@ public class TimerInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Long start=System.currentTimeMillis();
-        method.invoke(orderService,args);
+        Object value=method.invoke(orderService,args);
         Long end=System.currentTimeMillis();
         System.out.println(method.getName()+"花费"+(end-start)+"毫秒");
-        return null;
+        return value;
     }
 }
