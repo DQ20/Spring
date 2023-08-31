@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Husky.spring.mapper.AccountMapper">
+
+    <insert id="insert">
+        insert into t_acc (accNo,balance) values (#{accNo},#{balance})
+    </insert>
+
+    <update id="update">
+        update t_acc set balance=#{balance} where accNo=#{accNo}
+    </update>
+
+    <delete id="delete">
+        delete from t_acc where accNo=#{accNo}
+    </delete>
+
+    <select id="selectByAccNo" resultType="com.Husky.spring.pojo.Account">
+        select accNo,balance from t_acc where accNo=#{accNo};
+    </select>
+
+    <select id="selectAll" resultType="com.Husky.spring.pojo.Account">
+        select * from t_acc;
+    </select>
+
+</mapper>
