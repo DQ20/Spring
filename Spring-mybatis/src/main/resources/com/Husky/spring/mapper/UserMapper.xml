@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Husky.spring.mapper.UserMapper">
+    <insert id="insertUser">
+        insert into user(userName,gender,age)values(#{userName},#{gender},#{age});
+    </insert>
+    <delete id="deleteByUserName">
+        delete from user where userName=#{userName};
+    </delete>
+    <delete id="deleteNull">
+        delete from user where userName is Null or age is NULL or gender is null;
+    </delete>
+    <select id="selectAll" resultType="com.Husky.spring.pojo.User">
+        select * from user;
+    </select>
+
+</mapper>

@@ -11,6 +11,7 @@
         <module name="Aop-XML" />
         <module name="Spring-009" />
         <module name="Dynamic-proxy-jdk" />
+        <module name="Spring-mybatis" />
         <module name="Spring-002" />
         <module name="Spring-003" />
         <module name="Spring-001" />
